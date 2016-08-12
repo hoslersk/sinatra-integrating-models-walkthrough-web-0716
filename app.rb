@@ -9,6 +9,9 @@ end
 
 post '/' do
   text_from_user = params[:user_text]
+  @analyzed_text = TextAnalyzer.new(text_from_user)
+  #or simply...
+  #@analyzed_text = TextAnalyzer.new(params[:user_text])
   erb :results
 end
 
